@@ -57,7 +57,7 @@ const SignUp = () => {
                    placeholder="Password"/>
             <input type='Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}
                    placeholder="Repeat password"/>
-            <button onClick={() => handleRegister(email, password, confirmPassword)} disabled={loading}>{loading ? "Loading..." : "Register"}</button>
+            <button onClick={() => handleRegister(email, password, confirmPassword)} disabled={loading}>{loading ? "Загрузка..." : "Зарегестрироваться"}</button>
         </div>
     );
 };

@@ -5,10 +5,10 @@ import {Login} from "../components/Login.tsx";
 const LoginPage = () => {
     return (
         <div>
-            <h1>LoginPage</h1>
+            <h1>Авторизация</h1>
             <Login/>
             <p>
-                Or <Link to='/register'>Register</Link>
+                Или <Link to='/register'>зарегестрируйтесь</Link>
             </p>
         </div>
     )

@@ -86,7 +86,7 @@ const Header: FC = () => {
                         </div>
                     )}
                     {cartItems.length > 0 && (
-                        <button className='cart-btn'>Buy for {total} ₽</button>
+                        <button className='cart-btn'>Купить за {total} ₽</button>
                     )}
                 </div>
             )}
@@ -97,7 +97,7 @@ const Header: FC = () => {
                     <button onClick={() => {
                         dispatch(removeUser())
                         dispatch(clearCart());
-                    }}>Log out</button>
+                    }}>Выйти</button>
                 </div>
             )}
         </>

@@ -54,7 +54,7 @@ const Login = () => {
             <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
             <input type='password' value={password} onChange={(e) => setPassword(e.target.value)}
                    placeholder="Password"/>
-            <button onClick={() => handleLogin(email, password)} disabled={loading}>{loading ? "Loading..." : "Login"}</button>
+            <button onClick={() => handleLogin(email, password)} disabled={loading}>{loading ? "Загрузка..." : "Войти"}</button>
         </div>
     );
 };
