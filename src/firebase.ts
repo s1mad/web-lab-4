@@ -4,6 +4,7 @@ import {initializeApp} from "firebase/app";
 const firebaseConfig = {
     apiKey: 'AIzaSyA0XmbPN29dJy02AR73zCCaqjlkngfakpg',
     authDomain: 'auth-lab-64909.firebaseapp.com',
+    databaseURL: 'https://auth-lab-64909-default-rtdb.europe-west1.firebasedatabase.app/',
     projectId: 'auth-lab-64909',
     storageBucket: 'auth-lab-64909.appspot.com',
     messagingSenderId: '587130842378',
@@ -13,3 +14,4 @@ const firebaseConfig = {
 
 // @ts-ignore
 const app = initializeApp(firebaseConfig);
+

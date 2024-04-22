@@ -1,17 +1,15 @@
 import {Navigate} from "react-router-dom";
 import {useAuth} from "../hooks/use-auth.ts";
-import {removeUser} from "../store/slices/UserSlice.ts";
-import {useAppDispatch} from "../hooks/redux-hooks.ts";
+import Header from "../components/Header.tsx";
 
 const HomePage = () => {
-    const dispatch = useAppDispatch();
 
-    const {isAuth, email} = useAuth();
+    const {isAuth} = useAuth();
 
     return isAuth ? (
             <div>
+                <Header/>
                 <h1>Welcome</h1>
-                <button onClick={() => dispatch(removeUser())}>Log out from {email}</button>
             </div>
         ) :
         (
