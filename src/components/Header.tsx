@@ -13,14 +13,8 @@ import {removeUser} from "../store/slices/UserSlice.ts";
 import {useAppDispatch} from "../hooks/redux-hooks.ts";
 import {useAuth} from "../hooks/use-auth.ts";
 import {Link} from "react-router-dom";
+import {ICartItem} from "../types.ts";
 
-export interface ICartItem {
-    count: number
-    _id: string
-    name: string
-    imagePath: string
-    price: number
-}
 
 const cartItems: ICartItem[] = [
     {

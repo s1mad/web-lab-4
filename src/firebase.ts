@@ -1,4 +1,6 @@
 import {initializeApp} from "firebase/app";
+import {getDatabase, ref, set} from "firebase/database";
+import {IProductItem} from "./types.ts";
 
 
 const firebaseConfig = {
@@ -12,6 +14,21 @@ const firebaseConfig = {
 };
 
 
-// @ts-ignore
 const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+export const uploadProductItemsToDatabase = async (productItems: IProductItem[]) => {
+    try {
+        for (const productItem of productItems) {
+            const productRef = ref(db, `productItems/${productItem._id}`);
+            await set(productRef, productItem);
+        }
+
+        console.log("Карточки успешно загружены в базу данных Firebase.");
+    } catch (error) {
+        console.error("Ошибка при загрузке карточек в базу данных Firebase:", error);
+    }
+};
+
 

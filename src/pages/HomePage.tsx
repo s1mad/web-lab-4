@@ -1,6 +1,7 @@
 import {Navigate} from "react-router-dom";
 import {useAuth} from "../hooks/use-auth.ts";
 import Header from "../components/Header.tsx";
+import Products from "../components/Products.tsx";
 
 const HomePage = () => {
 
@@ -9,7 +10,7 @@ const HomePage = () => {
     return isAuth ? (
             <div>
                 <Header/>
-                <h1>Welcome</h1>
+                <Products/>
             </div>
         ) :
         (
