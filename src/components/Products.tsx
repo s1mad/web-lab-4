@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { getDatabase, ref, get } from 'firebase/database';
-import { IProductItem } from '../types';
+import React, {useEffect, useState} from 'react';
+import {getDatabase, ref, get} from 'firebase/database';
+import {IProductItem} from '../types';
+import {useAppDispatch, useAppSelector} from "../hooks/redux-hooks.ts"; // Importing the useDispatch hook
+import {addItem} from "../store/slices/CartSlice.ts"; // Importing the addItem action
 import './style/Products.css';
 
 const Products: React.FC = () => {
     const [productItems, setProductItems] = useState<IProductItem[]>([]);
+    const dispatch = useAppDispatch(); // Hook to dispatch actions
+
+    useAppSelector(state => state.cart.items);
 
     useEffect(() => {
         const fetchProductItems = async () => {
@@ -30,7 +35,13 @@ const Products: React.FC = () => {
     }, []);
 
     const addToCart = (productId: string) => {
-        console.log(`Товар с id ${productId} добавлен в корзину`);
+        const selectedProduct = productItems.find(item => item._id === productId);
+        if (selectedProduct) {
+            dispatch(addItem(selectedProduct));
+            console.log(`Товар с id ${productId} добавлен в корзину`);
+        } else {
+            console.error(`Товар с id ${productId} не найден`);
+        }
     };
 
     return (
@@ -39,7 +50,7 @@ const Products: React.FC = () => {
             <div className="products-grid">
                 {productItems.map((productItem) => (
                     <div key={productItem._id} className="product-card">
-                        <img src={productItem.imagePath} alt={productItem.name} />
+                        <img src={productItem.imagePath} alt={productItem.name}/>
                         <div className="details">
                             <h3>{productItem.name}</h3>
                             <p>{productItem.price} руб.</p>
