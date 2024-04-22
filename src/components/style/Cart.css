@@ -3,12 +3,12 @@
     top: 100px;
     max-height: 600px;
     right: 15%;
-    background-color: #222222; /* цвет фона, похожий на основной фон */
+    background-color: #222222;
     border: 1px solid #ccc;
-    border-radius: 10px; /* скругленные углы */
+    border-radius: 10px;
     padding: 16px;
-    color: rgba(255, 255, 255, 0.87); /* цвет текста */
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; /* шрифт */
+    color: rgba(255, 255, 255, 0.87);
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -21,13 +21,13 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    padding-bottom: 10px; /* добавляем отступ между товарами */
-    border-bottom: 1px solid #ccc; /* добавляем полосу между товарами */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
 .cart-item:last-child {
-    margin-bottom: 0; /* убираем отступ после последнего товара */
-    border-bottom: none; /* убираем полосу после последнего товара */
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
 .cart-item-image {
@@ -38,17 +38,17 @@
 .cart-btn {
     width: 100%;
     padding: 10px;
-    background-color: #1a1a1a; /* цвет фона кнопки */
-    color: #fff; /* цвет текста кнопки */
+    background-color: #1a1a1a;
+    color: #fff;
     border: none;
-    border-radius: 8px; /* скругленные углы */
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 10px; /* добавляем отступ перед кнопкой */
-    transition: background-color 0.25s; /* плавное изменение цвета фона при наведении */
+    margin-top: 10px;
+    transition: background-color 0.25s;
 }
 
 .cart-btn:hover {
-    background-color: #535bf2; /* изменяем цвет фона кнопки при наведении */
+    background-color: #535bf2;
 }
 
 .cart-item-btn {
@@ -78,13 +78,13 @@
 }
 
 .cart-item-name {
-    font-size: 16px; /* Увеличиваем размер шрифта для названия товара */
-    font-weight: bold; /* Делаем название товара жирным */
+    font-size: 16px;
+    font-weight: bold;
     text-align: start;
 }
 
 .cart-item-price {
-    font-size: 14px; /* Уменьшаем размер шрифта для цены */
-    color: #888; /* Задаем серый цвет для цены */
+    font-size: 14px;
+    color: #888;
     text-align: start;
 }

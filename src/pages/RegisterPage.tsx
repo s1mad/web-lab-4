@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 import {SignUp} from "../components/SignUp.tsx";
 
 const RegisterPage = () => {
-    return(
+    return (
         <div>
             <h1>Регистрация</h1>
             <SignUp/>

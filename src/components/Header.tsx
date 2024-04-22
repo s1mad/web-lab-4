@@ -8,11 +8,11 @@ import accountIcon from '../assets/account.svg';
 import plusIcon from '../assets/plus.svg';
 import minusIcon from '../assets/minus.svg';
 import deleteIcon from '../assets/delete.svg';
-import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks.ts";
-import { useAuth } from "../hooks/use-auth.ts";
-import { Link } from "react-router-dom";
+import {useAppDispatch, useAppSelector} from "../hooks/redux-hooks.ts";
+import {useAuth} from "../hooks/use-auth.ts";
+import {Link} from "react-router-dom";
 import {removeItem, incrementItemCount, decrementItemCount, clearCart} from "../store/slices/CartSlice.ts";
-import { RootState } from "../store";
+import {RootState} from "../store";
 import {removeUser} from "../store/slices/UserSlice.ts";
 
 const Header: FC = () => {
@@ -20,7 +20,7 @@ const Header: FC = () => {
     const [isShowAccount, setIsShowAccount] = useState(false);
 
     const dispatch = useAppDispatch();
-    const { email } = useAuth();
+    const {email} = useAuth();
     const cartItems = useAppSelector((state: RootState) => state.cart.items);
     const total = cartItems.reduce((acc, item) => acc + item.price * item.count, 0);
 
@@ -97,7 +97,8 @@ const Header: FC = () => {
                     <button onClick={() => {
                         dispatch(removeUser())
                         dispatch(clearCart());
-                    }}>Выйти</button>
+                    }}>Выйти
+                    </button>
                 </div>
             )}
         </>

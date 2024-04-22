@@ -9,14 +9,14 @@ const initialState = {
 const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers:{
+    reducers: {
         setUser(state, action) {
             state.id = action.payload.id
             state.email = action.payload.email
             state.token = action.payload.token
 
         },
-        removeUser(state){
+        removeUser(state) {
             state.id = null
             state.email = null
             state.token = null

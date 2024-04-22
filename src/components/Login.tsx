@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import { setUser } from "../store/slices/UserSlice.ts";
-import { useAppDispatch } from "../hooks/redux-hooks.ts";
+import {useState} from "react";
+import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {useNavigate} from "react-router-dom";
+import {setUser} from "../store/slices/UserSlice.ts";
+import {useAppDispatch} from "../hooks/redux-hooks.ts";
 
 const Login = () => {
     const dispatch = useAppDispatch();
@@ -23,7 +23,7 @@ const Login = () => {
 
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
-            .then(({ user }) => {
+            .then(({user}) => {
                 console.log(user);
                 dispatch(
                     setUser({
@@ -54,9 +54,10 @@ const Login = () => {
             <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
             <input type='password' value={password} onChange={(e) => setPassword(e.target.value)}
                    placeholder="Password"/>
-            <button onClick={() => handleLogin(email, password)} disabled={loading}>{loading ? "Загрузка..." : "Войти"}</button>
+            <button onClick={() => handleLogin(email, password)}
+                    disabled={loading}>{loading ? "Загрузка..." : "Войти"}</button>
         </div>
     );
 };
 
-export { Login };
+export {Login};
